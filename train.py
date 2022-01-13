@@ -100,7 +100,7 @@ def setup(args):
             model.load_from(np.load(args.pretrained_dir))
         elif "inceptionv3" in args.model_name:
             model = models.inception_v3(pretrained = False)
-            IN_FEATURES = pretrained_model.fc.in_features
+            IN_FEATURES = model.fc.in_features
             final_fc = nn.Linear(IN_FEATURES, num_classes)
             model.fc = final_fc
 
