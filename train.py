@@ -99,7 +99,7 @@ def setup(args):
             model = VisionTransformer(config, args.img_size, zero_head=True, num_classes=num_classes, smoothing_value=args.smoothing_value)
             model.load_from(np.load(args.pretrained_dir))
         elif "inceptionv3" in args.model_name:
-            model = models.inception_v3(pretrained = False)
+            model = models.inception_v3(init_weights=True)
             IN_FEATURES = model.fc.in_features
             final_fc = nn.Linear(IN_FEATURES, num_classes)
             model.fc = final_fc
