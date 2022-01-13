@@ -357,7 +357,7 @@ def main():
     # Setup logging
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
                         datefmt='%m/%d/%Y %H:%M:%S',
-                        level=logging.INFO)
+                        level=logging.DEBUG)
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", choices=["CUB_200_2011", "dog"], default="CUB_200_2011",
