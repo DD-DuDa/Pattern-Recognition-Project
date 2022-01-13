@@ -99,17 +99,18 @@ def setup(args):
             model = VisionTransformer(config, args.img_size, zero_head=True, num_classes=num_classes, smoothing_value=args.smoothing_value)
             model.load_from(np.load(args.pretrained_dir))
         elif "inceptionv3" in args.model_name:
-            model = inception_v3(num_classes = num_classes, transform_input = True)
+            model = models.inception_v3(pretrained = False)
+            IN_FEATURES = pretrained_model.fc.in_features
+            final_fc = nn.Linear(IN_FEATURES, num_classes)
+            model.fc = final_fc
 
-    print("Load Gpu")
     model.to(args.device)
-    #print("Count Parameter")
-    #num_params = count_parameters(model)
+    num_params = count_parameters(model)
 
     logger.info("{} set up successful!".format(args.model_name))
     logger.info("{}".format(config))
     logger.info("Training parameters %s", args)
-    # logger.info("Total Parameter: \t%2.1fM" % num_params)   
+    logger.info("Total Parameter: \t%2.1fM" % num_params)   
     return args, model
 
 def count_parameters(model):
