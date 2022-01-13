@@ -103,8 +103,8 @@ def setup(args):
 
     print("Load Gpu")
     model.to(args.device)
-    print("Count Parameter")
-    num_params = count_parameters(model)
+    #print("Count Parameter")
+    #num_params = count_parameters(model)
 
     logger.info("{} set up successful!".format(args.model_name))
     logger.info("{}".format(config))
