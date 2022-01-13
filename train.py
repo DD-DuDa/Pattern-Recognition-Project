@@ -109,7 +109,7 @@ def setup(args):
     logger.info("{} set up successful!".format(args.model_name))
     logger.info("{}".format(config))
     logger.info("Training parameters %s", args)
-    logger.info("Total Parameter: \t%2.1fM" % num_params)   
+    # logger.info("Total Parameter: \t%2.1fM" % num_params)   
     return args, model
 
 def count_parameters(model):
