@@ -101,8 +101,8 @@ class dogs(Dataset):
 
         split = self.load_split()
 
-        self.images_folder = join(self.root, 'Images')
-        self.annotations_folder = join(self.root, 'Annotation')
+        self.images_folder = join(self.root, 'images', 'Images')
+        self.annotations_folder = join(self.root, 'annotations', 'Annotation')
         self._breeds = list_dir(self.images_folder)
 
         if self.cropped:
