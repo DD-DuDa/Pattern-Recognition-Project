@@ -294,11 +294,17 @@ class dogs(Dataset):
 
     def load_split(self):
         if self.train:
-            split = scipy.io.loadmat(join(self.root, 'train_list.mat'))['annotation_list']
-            labels = scipy.io.loadmat(join(self.root, 'train_list.mat'))['labels']
+            split = scipy.io.loadmat(join("../input/stanforddogslist/lists", 'train_list.mat'))['annotation_list']
+            labels = scipy.io.loadmat(join("../input/stanforddogslist/lists", 'train_list.mat'))['labels']
         else:
-            split = scipy.io.loadmat(join(self.root, 'test_list.mat'))['annotation_list']
-            labels = scipy.io.loadmat(join(self.root, 'test_list.mat'))['labels']
+            split = scipy.io.loadmat(join("../input/stanforddogslist/lists", 'test_list.mat'))['annotation_list']
+            labels = scipy.io.loadmat(join("../input/stanforddogslist/lists", 'test_list.mat'))['labels']
+        # if self.train:
+        #     split = scipy.io.loadmat(join(self.root, 'train_list.mat'))['annotation_list']
+        #     labels = scipy.io.loadmat(join(self.root, 'train_list.mat'))['labels']
+        # else:
+        #     split = scipy.io.loadmat(join(self.root, 'test_list.mat'))['annotation_list']
+        #     labels = scipy.io.loadmat(join(self.root, 'test_list.mat'))['labels']
 
         split = [item[0][0] for item in split]
         labels = [item[0]-1 for item in labels]
