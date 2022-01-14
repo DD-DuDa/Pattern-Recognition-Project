@@ -361,7 +361,7 @@ def main():
                         level=logging.DEBUG)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", choices=["CUB_200_2011", "dog"], default="CUB_200_2011",
+    parser.add_argument("--dataset", choices=["CUB_200_2011", "dog", "stanford-dogs-dataset"], default="CUB_200_2011",
                         help="Which dataset")
     parser.add_argument('--data_root', type=str, default='../datasets')            
     parser.add_argument('--model_name', type=str,
