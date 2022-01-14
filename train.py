@@ -59,7 +59,7 @@ def setup(args):
 
     if args.dataset == "CUB_200_2011":
         num_classes = 200
-    elif args.dataset == "dog":
+    elif args.dataset == "dog" or args.dataset == "stanford-dogs-dataset":
         num_classes = 120
     print("pretrain:", args.pretrained)
 
