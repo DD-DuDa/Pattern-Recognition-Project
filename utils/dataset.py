@@ -42,7 +42,7 @@ def get_loader(args):
         train_data = CUB(root=args.data_root, is_train=True, transform = train_transform)
         test_data = CUB(root=args.data_root, is_train=False, transform = test_transform)
         
-    if args.dataset == 'dog':
+    if args.dataset == 'dog' or args.dataset == "stanford-dogs-dataset":
         mean = PretrainMeans
         std = PretrainStds
         train_transform = transforms.Compose([
